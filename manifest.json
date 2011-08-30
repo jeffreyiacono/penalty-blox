@@ -1,0 +1,25 @@
+{
+  "name": "PenaltyBlox",
+  "description": "When following is too much, but unfollowing is too harsh.",
+  "version": "0.1",
+  "icons": {
+    "32":  "images/icon32.png",
+    "48":  "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "popup":        "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://twitter.com/*", "https://twitter.com/*"],
+      "js":      ["js/lib/jquery.js",
+                  "js/lib/underscore.js",
+                  "js/core_extensions.js",
+                  "js/content_script.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "permissions": []
+}
