@@ -1,0 +1,81 @@
+body {
+  width: 370px;
+  font-family: 'Courier', 'Courier New', 'monospace';
+  background-color: #eee;
+  padding: 0px 10px;
+  margin: 5px 10px 15px 10px;
+}
+
+h1 {
+  font-family: 'Arial', 'Helvetica', 'sans-serif';
+  background: #ddd url(/images/icon32.png) no-repeat 10px 50%;
+  padding: 8px 8px 8px 53px;
+  color: #fefefe;
+  text-shadow: 0 1px 0 #bbb;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-family: 'Arial', 'Helvetica', 'sans-serif';
+  margin-top: 0;
+  font-style: italic;
+  font-size: 12px;
+  color: #777;
+  text-shadow: 0 1px 0 #fff;
+  text-align: center;
+}
+
+.instructions {
+  line-height: 125%;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+  display: none;
+}
+
+#instructions-toggle {
+  display: block;
+  font-size: 10px;
+  color: #666;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+input {
+  font-size: 12px;
+  border: 1px solid #bbb;
+  padding: 5px;
+  width: 250px;
+  margin: 5px;
+}
+
+ul {
+  font-size: 14px;
+  color: #333;
+}
+
+#account {
+  margin-top: 14px;
+  padding-top: 7px;
+  background: url(/images/sawtooth.gif) top left repeat-x;
+}
+
+#account p {
+  line-height: 125%;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.blocked-account-destroy {
+  margin-left: 5px;
+  color: #B5C7DE;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.blocked-account-destroy:hover {
+  cursor: pointer;
+  color: #666;
+}
