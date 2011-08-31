@@ -1,5 +1,5 @@
 var monitor = {
-  interval: 2000,
+  interval: 1000,
 
   init: function() {
     // proxy 'this' to be the monitor
