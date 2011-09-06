@@ -71,8 +71,11 @@ $(function() {
       if(!tw_handle) return;
       BlockedAccounts.create({tw_handle: tw_handle});
       this.input.val('');
-      // show the reminder => twitter doesn't have focus if popup showing
-      this.reminder.addClass('highlight').fadeIn('slow');
+      // show refresh reminder => twitter doesn't have focus if popup showing
+      this.reminder
+        .html('<strong>Reminder:</strong> close this popup to see changes take effect')
+        .addClass('highlight')
+        .fadeIn('slow');
     },
 
     createOnEnter: function(e) {
