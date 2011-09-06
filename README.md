@@ -1,3 +1,11 @@
-# PenaltyBlox
+# About PenaltyBlox
 
-Install instructions and write up coming soon. Stay tuned.
+Whether it is a designer ultra-tweeting about some conference she is at or a venture capitalist intensely describing his pursuit of the always-elusive "inbox zero", sometimes you just want to mute someone you follow on Twitter. 
+This extensions allows you to do just that. You can easily put accounts that you follow in the penalty box, where they will be silenced and feel shame. 
+When you have deemed their sins absolved, you can let them out, free to fill your Twitter stream again.
+
+# PenaltyBlox Installation
+
+[Download](https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg "Google Web Store") and install as a Chrome Web Browser extension.
+
+Full link: <a title="Google Web Store" href="https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg">https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg</a>
