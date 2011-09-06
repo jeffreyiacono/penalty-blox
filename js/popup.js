@@ -37,6 +37,8 @@ $(function() {
     initialize: function() {
       this.input = this.$('#new-blocked-account');
       this.instructions = this.$('#controls .instructions');
+      this.reminder = this.$('#account .reminder');
+      this.reminder.hide();
       BlockedAccounts.bind('add', this.addOne, this);
       BlockedAccounts.bind('reset', this.addAll, this);
       BlockedAccounts.bind('all', this.render, this);
@@ -69,6 +71,8 @@ $(function() {
       if(!tw_handle) return;
       BlockedAccounts.create({tw_handle: tw_handle});
       this.input.val('');
+      // show the reminder => twitter doesn't have focus if popup showing
+      this.reminder.addClass('highlight').fadeIn('slow');
     },
 
     createOnEnter: function(e) {

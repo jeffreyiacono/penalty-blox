@@ -1,27 +1,34 @@
-var monitor = {
-  interval: 1000,
+var watcher = {
+  throttle: 1000,
+  interval_id: null,
 
-  init: function() {
-    // proxy 'this' to be the monitor
-    setTimeout($.proxy(this.referee, this), this.interval);
+  // fire referee on a set interval
+  // note: new tweets and infinite scroll are handled
+  // proxy 'this' to be the watcher
+  watch: function() {
+    this.interval_id = setInterval($.proxy(this.referee, this), this.throttle);
   },
 
-  // make sure offenders are sent to the box. They feel shame.
+  // clears the set interval and stops the refereeing
+  // when user is not looking at the window / tab, no need to do work
+  halt: function(interval_id) {
+    clearInterval(this.interval_id);
+  },
+
+  // send offenders to the box, they feel shame.
   referee: function() {
-    // remember know who you are
+    // remember who we are
     var self = this;
     // Load: use background / extension messaging to bridge popup with localStore
     // eventually want to move storage to web-app
     chrome.extension.sendRequest({method: "getPenaltyBox"}, function(response) {
-      // Remove by name, RTs, and mentions
+      // Remove by name, RTs, and mentions. TODO: add removal by hashtags
       _.each(response.penalty_box, function(twHandle) {
         self.removeByScreenName(twHandle);
         self.removeRetweetsByScreenName(twHandle);
         self.removeTweetsMentioningScreenName(twHandle);
       });
     });
-    // Recurse: covers new tweets and infinite scroll
-    self.init();
   },
 
   // penalty box by the screen name

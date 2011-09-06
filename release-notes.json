@@ -1,6 +1,4 @@
 {
-  "version": "0.1",
-  "log":[
-    "Initial release."
-  ]
+  "v0.2": {"log": ["Start / stop monitoring when webpage is active / inactive"]},
+  "v0.1": {"log": ["Initial release."]}
 }

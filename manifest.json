@@ -21,7 +21,7 @@
       "js":      ["js/lib/jquery.js",
                   "js/lib/underscore.js",
                   "js/core_extensions.js",
-                  "js/monitor.js",
+                  "js/watcher.js",
                   "js/content_script.js"]
     }
   ],
