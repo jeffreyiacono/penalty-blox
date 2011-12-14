@@ -1,4 +1,4 @@
-// Handle sending send offenders off to the box, they feel shame.
+// Handle sending offenders off to the box, they feel shame.
 function Referee() { return this; }
 
 // use background / extension messaging to bridge popup with localStore
