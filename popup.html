@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Popup - PenaltyBlox</title>
+    <title>PenaltyBlox Control Panel</title>
     <link rel="stylesheet" href="css/popup.css" type="text/css" />
     <script src="js/lib/jquery.js" type="text/javascript"></script>
     <script src="js/lib/underscore.js" type="text/javascript"></script>
     <script src="js/lib/backbone.js" type="text/javascript"></script>
     <script src="js/store.js" type="text/javascript"></script>
-    <script src="js/blocked_account.js" type="text/javascript"></script>
-    <script src="js/blocked_accounts.js" type="text/javascript"></script>
+    <script src="js/blocked_entry.js" type="text/javascript"></script>
+    <script src="js/blocked_entries.js" type="text/javascript"></script>
     <script src="js/popup.js" type="text/javascript"></script>
   </head>
   <body id="penalty-box-app">
@@ -17,16 +17,19 @@
       When following is too much, but unfollowing is too harsh
     </p>
     <div id="controls">
-      <input id="new-blocked-account" type="text" placeholder="twitter handle (case sensative) ..." />
-      <button id="add-blocked-account">Penalty Box</button>
+      <input id="new-blocked-entry" type="text" placeholder="name or hashtag ..." />
+      <button id="add-blocked-entry">Penalty Box</button>
       <a id="instructions-toggle" href="#">[+] Show Instructions</a>
       <p class="instructions">
-        Enter a twitter account you want to put into the penalty box above.
-        While the account is penalty boxed, their tweets will (hopefully) be removed from your activity stream.
-        Don't worry, you are still following them and you can unbox them whenever you'd like. Or never.
+        Enter a twitter account or hashtag you want to put into the penalty box above.
+        While it is penalty bloxed, any matching tweet will (hopefully) be removed from your activity stream.
+      </p>
+      <p class="instructions">
+        Don't worry, you are still following any penalty bloxed accounts. For hashtags don't forget to include the "#" at the beginning!
+        You can unbox any entries whenever you'd like. Or never.
       </p>
     </div>
-    <div id="account">
+    <div id="entries">
       <p>
         Your current penalty box:
       </p>

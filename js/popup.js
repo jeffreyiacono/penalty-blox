@@ -1,9 +1,9 @@
 $(function() {
-  // view - blocked account
-  window.BlockedAccountView = Backbone.View.extend({
+  // view - blocked entry
+  window.BlockedEntryView = Backbone.View.extend({
     tagName: 'li',
     events: {
-      'click .blocked-account-destroy': 'clear'
+      'click .blocked-entry-destroy': 'clear'
     },
 
     initialize: function() {
@@ -12,7 +12,7 @@ $(function() {
     },
 
     render: function() {
-      $(this.el).html(this.model.get('tw_handle') + '<span class="blocked-account-destroy">[x]</span>');
+      $(this.el).html(this.model.get('entry') + '<span class="blocked-entry-destroy">[x]</span>');
       return this;
     },
 
@@ -29,20 +29,20 @@ $(function() {
   window.AppView = Backbone.View.extend({
     el: $('#penalty-box-app'),
     events: {
-      'click #add-blocked-account':    'addBlockedAccount',
-      'click #instructions-toggle':    'toggleInstructions',
-      'keypress #new-blocked-account': 'createOnEnter'
+      'click #add-blocked-entry'    : 'addBlockedEntry',
+      'click #instructions-toggle'  : 'toggleInstructions',
+      'keypress #new-blocked-entry' : 'createOnEnter'
     },
 
     initialize: function() {
-      this.input = this.$('#new-blocked-account');
+      this.input = this.$('#new-blocked-entry');
       this.instructions = this.$('#controls .instructions');
-      this.reminder = this.$('#account .reminder');
+      this.reminder = this.$('#entries .reminder');
       this.reminder.hide();
-      BlockedAccounts.bind('add', this.addOne, this);
-      BlockedAccounts.bind('reset', this.addAll, this);
-      BlockedAccounts.bind('all', this.render, this);
-      BlockedAccounts.fetch();
+      BlockedEntries.bind('add', this.addOne, this);
+      BlockedEntries.bind('reset', this.addAll, this);
+      BlockedEntries.bind('all', this.render, this);
+      BlockedEntries.fetch();
     },
 
     toggleInstructions: function(e) {
@@ -57,19 +57,19 @@ $(function() {
       });
     },
 
-    addOne: function(account) {
-      var view = new BlockedAccountView({model: account});
+    addOne: function(entry) {
+      var view = new BlockedEntryView({model: entry});
       this.$('#penalty-box').prepend(view.render().el);
     },
 
     addAll: function() {
-      BlockedAccounts.each(this.addOne);
+      BlockedEntries.each(this.addOne);
     },
 
-    addBlockedAccount: function(e) {
-      var tw_handle = this.input.val();
-      if(!tw_handle) return;
-      BlockedAccounts.create({tw_handle: tw_handle});
+    addBlockedEntry: function(e) {
+      var entry = this.input.val();
+      if(!entry) return;
+      BlockedEntries.create({entry: entry});
       this.input.val('');
       // show refresh reminder => twitter doesn't have focus if popup showing
       this.reminder
@@ -80,10 +80,10 @@ $(function() {
 
     createOnEnter: function(e) {
       if (e.keyCode != 13) return;
-      this.addBlockedAccount(e);
+      this.addBlockedEntry(e);
     }
   });
 
-  window.BlockedAccounts = new BlockedAccounts;
+  window.BlockedEntries = new BlockedEntries;
   window.App = new AppView;
 });

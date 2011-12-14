@@ -54,13 +54,13 @@ ul {
   color: #333;
 }
 
-#account {
+#entries {
   margin-top: 14px;
   padding-top: 7px;
   background: url(/images/sawtooth.gif) top left repeat-x;
 }
 
-#account p {
+#entries p {
   line-height: 125%;
   font-size: 14px;
   color: #777;
@@ -68,14 +68,14 @@ ul {
   display: block;
 }
 
-.blocked-account-destroy {
+.blocked-entry-destroy {
   margin-left: 5px;
   color: #B5C7DE;
   font-weight: normal;
   font-size: 12px;
 }
 
-.blocked-account-destroy:hover {
+.blocked-entry-destroy:hover {
   cursor: pointer;
   color: #666;
 }
