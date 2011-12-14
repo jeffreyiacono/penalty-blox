@@ -1,7 +1,7 @@
 {
   "name": "PenaltyBlox",
   "description": "When following is too much, but unfollowing is too harsh.",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "icons": {
     "32":  "images/icon32.png",
     "48":  "images/icon48.png",
