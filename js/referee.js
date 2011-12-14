@@ -30,7 +30,7 @@ Referee.prototype.removeByScreenName = function(name) {
 
 // penalty box any retweets by the screen name
 Referee.prototype.removeRetweetsByScreenName = function(name) {
-  $('.tweet-meta em:containsExactly("by ' + name + '")').closest('.stream-item').penaltyBox();
+  $('.tweet-activity-retweets b:containsExactly("' + name + '")').closest('.stream-item').penaltyBox();
 }
 
 // penalty box any tweets that mention the screen name
