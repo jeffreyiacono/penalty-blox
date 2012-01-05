@@ -11,3 +11,7 @@ When you have deemed their sins absolved, you can let them out, free to fill you
 [Download](https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg "Google Web Store") and install as a Chrome Web Browser extension.
 
 Full link: <a title="Google Web Store" href="https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg">https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg</a>
+
+# TODO
+- Option to remove promoted Tweets from stream via on / off control
+- Web storage to replace local storage (or at least option to do so)
