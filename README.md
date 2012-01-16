@@ -12,6 +12,9 @@ When you have deemed their sins absolved, you can let them out, free to fill you
 
 Full link: <a title="Google Web Store" href="https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg">https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg</a>
 
+# PenaltyBlox Notes
+Extension works with "New Twitter" and it's associated HTML dom.
+
 # TODO
 - Option to remove promoted Tweets from stream via on / off control
 - Web storage to replace local storage (or at least option to do so)
