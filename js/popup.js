@@ -29,15 +29,17 @@ $(function() {
   window.AppView = Backbone.View.extend({
     el: $('#penalty-box-app'),
     events: {
-      'click #add-blocked-entry'    : 'addBlockedEntry',
-      'click #instructions-toggle'  : 'toggleInstructions',
-      'keypress #new-blocked-entry' : 'createOnEnter'
+      'click #add-blocked-entry'               : 'addBlockedEntry',
+      'click #instructions-toggle'             : 'toggleInstructions',
+      'keypress #new-blocked-entry'            : 'createOnEnter',
+      'click #remove-promoted-tweets:checkbox' : 'toggleRemovePromoted'
     },
 
     initialize: function() {
-      this.input = this.$('#new-blocked-entry');
-      this.instructions = this.$('#controls .instructions');
-      this.reminder = this.$('#entries .reminder');
+      this.input          = this.$('#new-blocked-entry');
+      this.instructions   = this.$('#controls .instructions');
+      this.reminder       = this.$('#entries .reminder');
+      this.removePromoted = this.$('#remove-promoted-tweets');
       this.reminder.hide();
       BlockedEntries.bind('add', this.addOne, this);
       BlockedEntries.bind('reset', this.addAll, this);
@@ -55,6 +57,11 @@ $(function() {
           link.text('[+] Show Instructions');
         }
       });
+    },
+
+    toggleRemovePromoted: function(e) {
+      var removePromoted = this.removePromoted.is(':checked');
+      Preferences.create({removePromoted: removePromoted});
     },
 
     addOne: function(entry) {

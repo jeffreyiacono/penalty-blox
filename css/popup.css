@@ -56,7 +56,7 @@ ul {
 
 #entries {
   margin-top: 14px;
-  padding-top: 7px;
+  padding: 7px 5px 0 5px;
   background: url(/images/sawtooth.gif) top left repeat-x;
 }
 
@@ -91,4 +91,20 @@ ul {
 
 .highlight {
   background-color: #ffff99;
+}
+
+#promoted-filter-wrapper {
+  color: #333;
+  text-align: left;
+  font-size: 10px;
+  margin-top: 7px;
+  padding: 14px 5px 0 5px;
+  background: url(/images/sawtooth.gif) top left repeat-x;
+}
+
+#promoted-filter-wrapper input[type='checkbox'] {
+  width: 15px;
+  margin: 0;
+  padding: 0;
+  display: inline;
 }

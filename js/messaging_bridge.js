@@ -12,6 +12,7 @@
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
   if (request.method == "getPenaltyBox") {
     var entries = JSON.parse(localStorage['penalty_box']);
+    var preferences = JSON.parse(localStorage['penalty_box_preferences']);
     sendResponse({
       penalty_box: _.map(entries, function(entry) { return entry.entry })
     });

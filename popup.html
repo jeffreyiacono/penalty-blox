@@ -9,6 +9,8 @@
     <script src="js/store.js" type="text/javascript"></script>
     <script src="js/blocked_entry.js" type="text/javascript"></script>
     <script src="js/blocked_entries.js" type="text/javascript"></script>
+    <script src="js/preference.js" type="text/javascript"></script>
+    <script src="js/preferences.js" type="text/javascript"></script>
     <script src="js/popup.js" type="text/javascript"></script>
   </head>
   <body id="penalty-box-app">
@@ -37,6 +39,10 @@
       <ul id="penalty-box">
         <!-- TODO: add a spinner or a loading message -->
       </ul>
+    </div>
+    <div id="promoted-filter-wrapper">
+      <input type="checkbox" id="remove-promoted-tweets" />
+      Yes, remove <span class="promoted-tweet-wrapper">promoted tweets</span> from my timeline
     </div>
   </body>
 </html>
