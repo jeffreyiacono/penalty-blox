@@ -40,6 +40,7 @@ $(function() {
       this.instructions   = this.$('#controls .instructions');
       this.reminder       = this.$('#entries .reminder');
       this.removePromoted = this.$('#remove-promoted-tweets');
+      Settings.includes('removePromoted') ? this.removePromoted.prop('checked', true) : this.removePromoted.prop('checked', false);
       this.reminder.hide();
       BlockedEntries.bind('add', this.addOne, this);
       BlockedEntries.bind('reset', this.addAll, this);
@@ -60,8 +61,11 @@ $(function() {
     },
 
     toggleRemovePromoted: function(e) {
-      var removePromoted = this.removePromoted.is(':checked');
-      Preferences.create({removePromoted: removePromoted});
+      if (this.removePromoted.is(':checked')) {
+        Settings.set('removePromoted');
+      } else {
+        Settings.remove('removePromoted');
+      }
     },
 
     addOne: function(entry) {
@@ -92,5 +96,6 @@ $(function() {
   });
 
   window.BlockedEntries = new BlockedEntries;
+  window.Settings = new Settings;
   window.App = new AppView;
 });

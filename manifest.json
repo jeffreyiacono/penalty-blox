@@ -1,24 +1,24 @@
 {
-  "name": "PenaltyBlox",
+  "name"       : "PenaltyBlox",
   "description": "When following is too much, but unfollowing is too harsh.",
-  "version": "0.4.0",
+  "version"    : "0.4.0",
   "icons": {
-    "32":  "images/icon32.png",
-    "48":  "images/icon48.png",
+    "32" : "images/icon32.png",
+    "48" : "images/icon48.png",
     "128": "images/icon128.png"
   },
-  "browser_action": {
+  "browser_action" : {
     "default_title": "Penalty Blox",
-    "default_icon":  "images/icon.png",
-    "popup":         "popup.html"
+    "default_icon" : "images/icon.png",
+    "popup"        : "popup.html"
   },
-  "background_page": "background.html",
-  "homepage_url": "http://penaltyblox.com",
+  "background_page"       : "background.html",
+  "homepage_url"          : "http://penaltyblox.com",
   "minimum_chrome_version": "13.0",
   "content_scripts": [
     {
       "matches": ["http://twitter.com/*", "https://twitter.com/*"],
-      "js":      ["js/lib/jquery.js",
+      "js"     : ["js/lib/jquery.js",
                   "js/lib/underscore.js",
                   "js/core_extensions.js",
                   "js/watcher.js",
@@ -27,5 +27,5 @@
     }
   ],
   "options_page": "options.html",
-  "permissions": []
+  "permissions" : []
 }
