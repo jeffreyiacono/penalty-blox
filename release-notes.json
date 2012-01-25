@@ -1,4 +1,5 @@
 {
+  "v0.4.2": {"log": ["BUGFIX: improve performance"], ['Add bug contact info']},
   "v0.4.1": {"log": ["Add removal of promoted tweets setting option"]},
   "v0.4.0": {"log": ["Update removal logic for New Twitter html structure"]},
   "v0.3.1": {"log": ["BUGFIX: Update RT removal, TW changed html structure"]},
