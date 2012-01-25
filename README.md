@@ -6,7 +6,7 @@ When you have deemed their sins absolved, you can let them out, free to fill you
 
 You can also remove promoted tweets if you'd like.
 
-![PenaltyBlox Screenshot](https://lh3.googleusercontent.com/-dXzlsrbw6cc/TsG38RkEHmI/AAAAAAAAAcY/42eaWWYV370/s640/penaltyblox.jpg)
+![PenaltyBlox Screenshot](https://lh6.googleusercontent.com/-5ysel306nHc/Tx-3LYvlPTI/AAAAAAAAAfE/InYoZdx7OZ8/s640/Screen%252520Shot%2525202012-01-25%252520at%2525202.00.54%252520AM.png)
 
 # PenaltyBlox Installation
 
