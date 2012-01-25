@@ -1,5 +1,7 @@
 /**
- * Note: wanted to use backbone's models here, but they would not refresh
+ * Messaging bridge to return popup's localstorage entry and settings data
+ *
+ * Note: wanted to use backbone's models here, but would not refresh
  *       when new entry was added via the extension (unknown why).
  *       For example: (assumes proper js files are included in the header)
  *
@@ -10,18 +12,16 @@
  *                                       dynamically added during run time
  *
  * Resorted to pulling directly from localStorage and parsing
- * Likely want to move storage to a web-app
+ * Likely want to move storage to a web-app at some point
  */
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
-  if (request.method == "getPenaltyBox") {
-    var entries = JSON.parse(localStorage['penalty_box']);
+  if (request.method == "getDataFromPopup") {
+    var entries  = JSON.parse(localStorage['penalty_box']);
+    var settings = JSON.parse(localStorage['penalty_box_settings']);
+
     sendResponse({
       penalty_box: _.map(entries, function(entry) { return entry.entry }),
-    });
-  } else if (request.method == "getSettings") {
-    var settings = JSON.parse(localStorage['penalty_box_settings']);
-    sendResponse({
-      settings: settings
+         settings: settings
     });
   }
 });
