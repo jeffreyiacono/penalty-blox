@@ -38,17 +38,13 @@ $(function() {
     },
 
     initialize: function() {
-      // set version for UI display => have to figure out how to parse
-      // manifest.json
-      // var version = ###;
-      // $(this.el).find('#current-version').text('penalty-box-v' + version);
-
       this.input          = $(this.el).find('#new-blocked-entry');
       this.instructions   = $(this.el).find('#controls .instructions');
       this.reminder       = $(this.el).find('#reminder');
       this.removePromoted = $(this.el).find('#remove-promoted-tweets');
       this.settings       = new Settings;
       this.setRemovePromotedControl(); // can this be handled with custom events?
+      this.showCurrentVersion();
       this.reminder.hide();
 
       _.bindAll(this, 'addOne');
@@ -57,6 +53,13 @@ $(function() {
       BlockedEntries.bind('reset', this.addAll, this);
       BlockedEntries.bind('all', this.render, this);
       BlockedEntries.fetch();
+    },
+
+    showCurrentVersion: function() {
+      var self = this;
+      $.getJSON('manifest.json', function(data) {
+        $(self.el).find('#current-version').text('penalty-box-v' + data['version']);
+      });
     },
 
     setRemovePromotedControl: function() {
