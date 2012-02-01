@@ -29,12 +29,12 @@
         Don't worry, you are still following any penalty bloxed accounts. For hashtags don't forget to include the "#" at the beginning!
         You can unbox any entries whenever you'd like. Or never.
       </p>
+      <div id="reminder"></div>
     </div>
     <div id="entries">
       <p>
         Your current penalty box:
       </p>
-      <div class="reminder"></div>
       <ul id="penalty-box">
         <!-- TODO: add a spinner or a loading message -->
       </ul>
@@ -49,5 +49,8 @@
     <div id="current-version">
       penalty-box-v0.4.2
     </div>
+    <script type="text/template" id="blocked-entry-item-template">
+      <%= entry %> <span class="blocked-entry-destroy">[x]</span>
+    </script>
   </body>
 </html>

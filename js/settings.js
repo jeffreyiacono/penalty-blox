@@ -12,6 +12,10 @@ Settings.prototype.includes = function(setting) {
   return _.include(this.getAll(), setting);
 }
 
+Settings.prototype.wantsPromotedRemoved = function() {
+  return this.includes('removePromoted');
+}
+
 Settings.prototype.getAll = function() {
   return JSON.parse(this._store.getItem(this._key));
 }

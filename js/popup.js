@@ -2,6 +2,7 @@ $(function() {
   // view - blocked entry
   window.BlockedEntryView = Backbone.View.extend({
     tagName: 'li',
+    template: '#blocked-entry-item-template',
     events: {
       'click .blocked-entry-destroy': 'clear'
     },
@@ -12,7 +13,8 @@ $(function() {
     },
 
     render: function() {
-      $(this.el).html(this.model.get('entry') + '<span class="blocked-entry-destroy">[x]</span>');
+      var template = _.template($(this.template).html(), this.model.toJSON());
+      $(this.el).html(template);
       return this;
     },
 
@@ -27,7 +29,7 @@ $(function() {
 
   // view - application
   window.AppView = Backbone.View.extend({
-    el: $('#penalty-box-app'),
+    el: '#penalty-box-app',
     events: {
       'click #add-blocked-entry'               : 'addBlockedEntry',
       'click #instructions-toggle'             : 'toggleInstructions',
@@ -36,41 +38,60 @@ $(function() {
     },
 
     initialize: function() {
-      this.input          = this.$('#new-blocked-entry');
-      this.instructions   = this.$('#controls .instructions');
-      this.reminder       = this.$('#entries .reminder');
-      this.removePromoted = this.$('#remove-promoted-tweets');
-      Settings.includes('removePromoted') ? this.removePromoted.prop('checked', true) : this.removePromoted.prop('checked', false);
+      // set version for UI display => have to figure out how to parse
+      // manifest.json
+      // var version = ###;
+      // $(this.el).find('#current-version').text('penalty-box-v' + version);
+
+      this.input          = $(this.el).find('#new-blocked-entry');
+      this.instructions   = $(this.el).find('#controls .instructions');
+      this.reminder       = $(this.el).find('#reminder');
+      this.removePromoted = $(this.el).find('#remove-promoted-tweets');
+      this.settings       = new Settings;
+      this.setRemovePromotedControl(); // can this be handled with custom events?
       this.reminder.hide();
+
+      _.bindAll(this, 'addOne');
+
       BlockedEntries.bind('add', this.addOne, this);
       BlockedEntries.bind('reset', this.addAll, this);
       BlockedEntries.bind('all', this.render, this);
       BlockedEntries.fetch();
     },
 
+    setRemovePromotedControl: function() {
+      this.removePromoted.prop('checked', this.settings.wantsPromotedRemoved());
+    },
+
     toggleInstructions: function(e) {
       e.preventDefault();
-      var link = $(e.target);
+
+      var link = $(e.target),
+          instructions;
+
       this.instructions.slideToggle('fast', function() {
-        if($(this).is(':visible')) {
-          link.text('[-] Hide Instructions');
+        if ($(this).is(':visible')) {
+          instructions = '[-] Hide Instructions';
         } else {
-          link.text('[+] Show Instructions');
+          instructions = '[+] Show Instructions';
         }
+        link.text(instructions);
       });
     },
 
     toggleRemovePromoted: function(e) {
       if (this.removePromoted.is(':checked')) {
-        Settings.set('removePromoted');
+        this.settings.set('removePromoted');
       } else {
-        Settings.remove('removePromoted');
+        this.settings.remove('removePromoted');
       }
+      // show refresh reminder => twitter doesn't have focus if popup showing
+      this.showRefreshReminder();
     },
 
     addOne: function(entry) {
       var view = new BlockedEntryView({model: entry});
-      this.$('#penalty-box').prepend(view.render().el);
+      $(this.el).find('#penalty-box').prepend(view.render().el);
     },
 
     addAll: function() {
@@ -83,6 +104,10 @@ $(function() {
       BlockedEntries.create({entry: entry});
       this.input.val('');
       // show refresh reminder => twitter doesn't have focus if popup showing
+      this.showRefreshReminder();
+    },
+
+    showRefreshReminder: function() {
       this.reminder
         .html('<strong>Reminder:</strong> close this popup to see changes take effect')
         .addClass('highlight')
@@ -96,6 +121,5 @@ $(function() {
   });
 
   window.BlockedEntries = new BlockedEntries;
-  window.Settings = new Settings;
-  window.App = new AppView;
-});
+  window.Application    = new AppView;
+}).call(this);

@@ -9,10 +9,9 @@ $(function() {
     watcher.halt();
   });
 
-  // initiate the Referee
-  var referee = new Referee();
-  // initiate the Watcher
-  var watcher = new Watcher(referee);
-  // start watching
+  // initiate the Referee, Watcher, and have Watcher start watching
+  var referee = new Referee(),
+      watcher = new Watcher(referee);
+
   watcher.watch();
 });
