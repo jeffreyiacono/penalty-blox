@@ -1,4 +1,5 @@
 {
+  "v0.4.4": {"log": ["Add label so checking checkbox is easier"]},
   "v0.4.3": {"log": ["Bump underscore, jquery, and backbone to latest version"], ['refactor backbone views'], ['dynamically pull and display current version on popup']},
   "v0.4.2": {"log": ["BUGFIX: improve performance"], ['Add bug contact info']},
   "v0.4.1": {"log": ["Add removal of promoted tweets setting option"]},
