@@ -14,7 +14,7 @@
  * Resorted to pulling directly from localStorage and parsing
  * Likely want to move storage to a web-app at some point
  */
-chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.method == "getDataFromPopup") {
     var entries  = JSON.parse(localStorage['penalty_box']);
     var settings = JSON.parse(localStorage['penalty_box_settings']);

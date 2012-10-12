@@ -20,7 +20,7 @@ Referee.prototype.referee = function() {
    *
    * For settings, respond appropriately based on current elections
    */
-  chrome.extension.sendRequest({method: "getDataFromPopup"}, function(response) {
+  chrome.extension.sendMessage({method: "getDataFromPopup"}, function(response) {
     // Grab the home stream, pass as param => being reused over and over, so cache
     // it once and reuse it.
     var stream = $('#home-stream-manager');
