@@ -125,4 +125,4 @@ $(function() {
 
   window.BlockedEntries = new BlockedEntries;
   window.Application    = new AppView;
-}).call(this);
+});
