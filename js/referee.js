@@ -3,7 +3,7 @@ function Referee() {
   return this;
 }
 
-/** 
+/**
  * use background / extension messaging to bridge popup with localStore
  * get all penalty boxed entries and remove them along with settings
  *
@@ -43,7 +43,8 @@ Referee.prototype.referee = function() {
     });
   });
 }
-/** 
+
+/**
  *  penalty box any tweets by a given user
  *  @param name can be either the user's twitter handle or profile name
  *  @param stream is the id of twitters html stream node
@@ -53,7 +54,8 @@ Referee.prototype.removeTweetsByUser = function(name, stream) {
   stream.find('.stream-item-header .username b:containsExactly("' + name + '")').tweet().penaltyBox();
   stream.find('.stream-item-header strong.fullname:containsExactly("' + name + '")').tweet().penaltyBox();
 }
-/** 
+
+/**
  *  penalty box any retweets by a given user
  *  @param name can be either the user's twitter handle or profile name
  *  @param stream is the id of twitters html stream node
@@ -63,7 +65,8 @@ Referee.prototype.removeRetweetsByUser = function(name, stream) {
   stream.find('.stream-item-footer b:containsExactly("' + name + '")').tweet().penaltyBox();
   stream.find('.stream-item-footer a.js-user-profile-link[href$="/' + name +'"]').tweet().penaltyBox();
 }
-/** 
+
+/**
  *  penalty box any mentions of a given user
  *  @param name can be either the user's twitter handle or profile name
  *  @param stream is the id of twitters html stream node
