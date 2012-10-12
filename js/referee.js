@@ -31,7 +31,7 @@ Referee.prototype.referee = function() {
       } else {
         self.removeTweetsByUser(entry, stream);
         self.removeRetweetsByUser(entry, stream);
-        self.removeMentionsOfUser(entry, stream);
+        self.removeAtMentionsOfUser(entry, stream);
       }
     });
 
@@ -69,8 +69,8 @@ Referee.prototype.removeRetweetsByUser = function(name, stream) {
  *  @param stream is the id of twitters html stream node
  *  note: assumes "new twitter" html structure
  */
-Referee.prototype.removeMentionsOfUser = function(name, stream) {
-  stream.find('.js-tweet-text a.twitter-atreply[data-screen-name="' + name + '"]').tweet().penaltyBox();
+Referee.prototype.removeAtMentionsOfUser = function(name, stream) {
+  stream.find('.js-tweet-text a.twitter-atreply b:containsExactly("' + name + '")').tweet().penaltyBox();
 }
 /** 
  * penalty box tweets with a given hashtag
