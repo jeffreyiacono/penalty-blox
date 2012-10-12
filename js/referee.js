@@ -72,13 +72,17 @@ Referee.prototype.removeRetweetsByUser = function(name, stream) {
 Referee.prototype.removeAtMentionsOfUser = function(name, stream) {
   stream.find('.js-tweet-text a.twitter-atreply b:containsExactly("' + name + '")').tweet().penaltyBox();
 }
-/** 
+
+/**
  * penalty box tweets with a given hashtag
  * @param hashtag can be any string in the from '#' + string
- *  @param stream is the id of twitters html stream node
+ * @param stream is the id of twitters html stream node
+ * note: for strings that start with "#" we check the DOM for the string
+ * proceeding the "#" ... TW currently splits the "#" + "[string]" into
+ * different DOM elements.
  */
 Referee.prototype.removeTweetsWithHashtag = function(hashtag, stream) {
-  stream.find('.js-tweet-text a.twitter-hashtag[title="' + hashtag + '"]').tweet().penaltyBox();
+  stream.find('.js-tweet-text a.twitter-hashtag b:containsExactly("' + hashtag.substr(1, hashtag.length - 1) + '")').tweet().penaltyBox();
 }
 
 /**
