@@ -23,7 +23,7 @@ Referee.prototype.referee = function() {
   chrome.extension.sendMessage({method: "getDataFromPopup"}, function(response) {
     // Grab the home stream, pass as param => being reused over and over, so cache
     // it once and reuse it.
-    var stream = $('#home-stream-manager');
+    var stream = $('.stream-items');
     // penalty box
     _.each(response.penalty_box, function(entry) {
       if (entry && entry.substr(0, 1) == "#") {
