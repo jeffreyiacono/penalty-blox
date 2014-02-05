@@ -115,9 +115,47 @@ ul {
   text-align: center;
   color: #555;
   font-size: 10px;
-  margin-top: 7px;
+  margin-top: 9px;
+}
+
+#donate {
   padding: 18px 5px 0 5px;
   background: url(/images/sawtooth.gif) top left repeat-x;
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+#donate a,
+#donate a:visited {
+  color: #555;
+  text-decoration: none;
+}
+
+#donate a.cta,
+#donate a.cta:visited {
+  background: url(/images/donate.png) left 50% no-repeat;
+  padding: 5px 0 5px 22px;
+}
+
+#donate a span.action {
+  color: #333;
+  font-weight: bold;
+}
+
+#donate .qr-code {
+  display: none;
+  text-align: center;
+}
+
+#donate .qr-code .image-container {
+  display: block;
+  padding: 9px 0 5px;
+  margin: 0 auto;
+}
+#donate .qr-code img {
+  border: 1px solid #ccc;
 }
 
 #connect .bug {
@@ -135,6 +173,6 @@ ul {
   text-align: center;
   font-size: 10px;
   color: #888;
-  margin: 7px 0 0 0;
+  margin: 9px 0 0 0;
   padding: 0;
 }
