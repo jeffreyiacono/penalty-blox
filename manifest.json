@@ -1,31 +1,44 @@
 {
-  "name"       : "PenaltyBlox",
-  "description": "When following is too much, but unfollowing is too harsh.",
-  "version"    : "0.4.5",
-  "icons": {
+  "name" : "PenaltyBlox",
+  "short_name" : "PenaltyBlox",
+  "manifest_version" : 2,
+  "description" : "When following is too much, but unfollowing is too harsh.",
+  "version"  : "1.0.0",
+  "homepage_url" : "http://penaltyblox.com",
+  "minimum_chrome_version" : "13.0",
+  "content_security_policy": "script-src 'unsafe-eval'; object-src 'self'",
+  "icons" : {
     "32" : "images/icon32.png",
     "48" : "images/icon48.png",
     "128": "images/icon128.png"
   },
-  "browser_action" : {
-    "default_title": "Penalty Blox",
-    "default_icon" : "images/icon.png",
-    "popup"        : "popup.html"
+  "permissions" : [
+    "background",
+    "storage"
+  ],
+  "options_page" : "options.html",
+  "background" : {
+    "page" : "background.html"
   },
-  "background_page"       : "background.html",
-  "homepage_url"          : "http://penaltyblox.com",
-  "minimum_chrome_version": "13.0",
-  "content_scripts": [
+  "content_scripts" : [
     {
-      "matches": ["http://twitter.com/*", "https://twitter.com/*"],
-      "js"     : ["js/lib/jquery.js",
-                  "js/lib/underscore.js",
-                  "js/core_extensions.js",
-                  "js/watcher.js",
-                  "js/referee.js",
-                  "js/content_script.js"]
+      "matches" : [
+        "http://twitter.com/*",
+        "https://twitter.com/*"
+      ],
+      "js" : [
+        "js/lib/jquery.js",
+        "js/lib/underscore.js",
+        "js/core_extensions.js",
+        "js/watcher.js",
+        "js/referee.js",
+        "js/content_script.js"
+      ]
     }
   ],
-  "options_page": "options.html",
-  "permissions" : []
+  "browser_action" : {
+    "default_title" : "Penalty Blox",
+    "default_icon" : "images/icon.png",
+    "default_popup" : "popup.html"
+  }
 }

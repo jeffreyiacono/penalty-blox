@@ -34,7 +34,8 @@ $(function() {
       'click #add-blocked-entry'               : 'addBlockedEntry',
       'click #instructions-toggle'             : 'toggleInstructions',
       'keypress #new-blocked-entry'            : 'createOnEnter',
-      'click #remove-promoted-tweets:checkbox' : 'toggleRemovePromoted'
+      'click #remove-promoted-tweets:checkbox' : 'toggleRemovePromoted',
+      'click #donate a.cta'                    : 'toggleDonation'
     },
 
     initialize: function() {
@@ -42,6 +43,7 @@ $(function() {
       this.instructions   = $(this.el).find('#controls .instructions');
       this.reminder       = $(this.el).find('#reminder');
       this.removePromoted = $(this.el).find('#remove-promoted-tweets');
+      this.donateQrCode   = $(this.el).find('#donate .qr-code');
       this.settings       = new Settings;
       this.setRemovePromotedControl(); // can this be handled with custom events?
       this.showCurrentVersion();
@@ -79,6 +81,18 @@ $(function() {
           instructions = '[+] Show Instructions';
         }
         link.text(instructions);
+      });
+    },
+
+    toggleDonation: function(e) {
+      e.preventDefault();
+
+      this.donateQrCode.slideToggle('fast', function() {
+        if ($(this).is(':visible')) {
+          // show ... nothing extra to do
+        } else {
+          // hide ... nothing extra to do
+        }
       });
     },
 

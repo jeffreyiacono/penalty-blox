@@ -59,11 +59,11 @@ Referee.prototype.removeTweetsByUser = function(name, stream) {
  *  penalty box any retweets by a given user
  *  @param name can be either the user's twitter handle or profile name
  *  @param stream is the id of twitters html stream node
- *  note: assumes "new twitter" html structure
+ *  note: assumes "new new twitter" html structure
  */
 Referee.prototype.removeRetweetsByUser = function(name, stream) {
-  stream.find('.stream-item-footer b:containsExactly("' + name + '")').tweet().penaltyBox();
-  stream.find('.stream-item-footer a.js-user-profile-link[href$="/' + name +'"]').tweet().penaltyBox();
+  stream.find('.js-retweet-text b:containsExactly("' + name + '")').tweet().penaltyBox();
+  stream.find('.js-retweet-text a.js-user-profile-link[href$="/' + name +'"]').tweet().penaltyBox();
 }
 
 /**
