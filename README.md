@@ -14,6 +14,14 @@ You can also remove promoted tweets if you'd like.
 
 Full link: <a title="Google Web Store" href="https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg">https://chrome.google.com/webstore/detail/ajoigckelmnkcjajbeinpkmbndeiokdg</a>
 
+# Like PenaltyBlox?
+Buy me a coffee! Send bitcoin to the following address:
+`1CcgNZiVfqmzT7TTPmE86EP7z31R5Lf69d`
+
+Or scan the following QR code if you have a bitcoin wallet on your mobile
+device:
+![1CcgNZiVfqmzT7TTPmE86EP7z31R5Lf69d](https://raw2.github.com/jeffreyiacono/images/master/penalty-blox/1CcgNZiVfqmzT7TTPmE86EP7z31R5Lf69d.png)
+
 # PenaltyBlox Notes
 Extension works with "New Twitter" and it's associated HTML dom.
 
