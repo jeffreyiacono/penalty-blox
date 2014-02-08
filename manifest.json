@@ -3,7 +3,7 @@
   "short_name" : "PenaltyBlox",
   "manifest_version" : 2,
   "description" : "When following is too much, but unfollowing is too harsh.",
-  "version"  : "1.0.0",
+  "version"  : "1.0.1",
   "homepage_url" : "http://penaltyblox.com",
   "minimum_chrome_version" : "13.0",
   "content_security_policy": "script-src 'unsafe-eval'; object-src 'self'",

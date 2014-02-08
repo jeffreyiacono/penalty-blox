@@ -16,11 +16,11 @@ Full link: <a title="Google Web Store" href="https://chrome.google.com/webstore/
 
 # Like PenaltyBlox?
 Buy me a coffee! Send bitcoin to the following address:
-`1CcgNZiVfqmzT7TTPmE86EP7z31R5Lf69d`
+`1AYG93PW5zL7YLyGkevGvPGQHmxYpGnv6m`
 
 Or scan the following QR code if you have a bitcoin wallet on your mobile
 device:
-![1CcgNZiVfqmzT7TTPmE86EP7z31R5Lf69d](https://raw2.github.com/jeffreyiacono/images/master/penalty-blox/1CcgNZiVfqmzT7TTPmE86EP7z31R5Lf69d.png)
+![1AYG93PW5zL7YLyGkevGvPGQHmxYpGnv6m](https://raw2.github.com/jeffreyiacono/images/master/penalty-blox/1AYG93PW5zL7YLyGkevGvPGQHmxYpGnv6m.png)
 
 # PenaltyBlox Notes
 Extension works with "New Twitter" and it's associated HTML dom.
