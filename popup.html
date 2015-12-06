@@ -31,7 +31,7 @@
       </p>
       <div id="reminder"></div>
     </div>
-    <div id="entries">
+    <div id="entries" class="generic-wrapper">
       <p>
         Your current penalty box:
       </p>
@@ -39,9 +39,17 @@
         <!-- TODO: add a spinner or a loading message -->
       </ul>
     </div>
-    <div id="promoted-filter-wrapper">
-      <input type="checkbox" id="remove-promoted-tweets" name="remove-promoted-tweets" />
-      <label for="remove-promoted-tweets">Yes, remove <span class="promoted-tweet-wrapper">promoted tweets</span> from my timeline</label>
+    <div id="global-filters" class="generic-wrapper">
+      <ul>
+        <li>
+          <input type="checkbox" id="remove-promoted-tweets" name="remove-promoted-tweets" />
+          <label for="remove-promoted-tweets">Yes, remove <span class="filter-subject">promoted tweets</span> from my timeline</label>
+        </li>
+        <li>
+          <input type="checkbox" id="remove-moments-nav" name="remove-moments-nav" />
+          <label for="remove-moments-nav">Yes, remove <span class="filter-subject">Moments</span> from my header</label>
+        </li>
+      </ul>
     </div>
     <div id="donate">
       <a class="cta" href="#" title="Like Penalty Blox? Buy me a coffee!">Like Penalty Blox? <span class="action">Buy me a coffee</span></a>

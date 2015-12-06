@@ -33,6 +33,35 @@ h1 {
   display: none;
 }
 
+.generic-wrapper {
+  text-align: left;
+  margin-top: 7px;
+  padding: 18px 5px 7px 5px;
+  background: url(/images/sawtooth.gif) top left repeat-x;
+}
+
+.generic-wrapper input[type='checkbox'] {
+  width: 15px;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.generic-wrapper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+
+.generic-wrapper ul li {
+  margin: 3px 0;
+}
+
+.filter-subject {
+  font-weight: bold;
+}
+
 #instructions-toggle {
   display: block;
   font-size: 10px;
@@ -49,15 +78,20 @@ input {
   margin: 5px;
 }
 
-ul {
-  font-size: 14px;
-  color: #333;
-}
-
 #entries {
   margin-top: 14px;
   padding: 7px 5px 0 5px;
-  background: url(/images/sawtooth.gif) top left repeat-x;
+}
+
+#entries ul {
+  list-style: disc;
+  font-size: 14px;
+  color: #333;
+  margin: 1em 1.3em;
+}
+
+#entries ul li {
+  margin: 0.1em;
 }
 
 #entries p {
@@ -94,20 +128,12 @@ ul {
   background-color: #ffff99;
 }
 
-#promoted-filter-wrapper {
+#global-filters {
   color: #333;
   text-align: left;
   font-size: 11px;
   margin-top: 7px;
   padding: 18px 5px 7px 5px;
-  background: url(/images/sawtooth.gif) top left repeat-x;
-}
-
-#promoted-filter-wrapper input[type='checkbox'] {
-  width: 15px;
-  margin: 0;
-  padding: 0;
-  display: inline;
 }
 
 #connect {
@@ -124,7 +150,7 @@ ul {
   display: block;
   text-align: center;
   font-size: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 #donate a,
