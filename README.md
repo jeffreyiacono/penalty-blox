@@ -20,6 +20,7 @@ Buy me a coffee! Send bitcoin to the following address:
 
 Or scan the following QR code if you have a bitcoin wallet on your mobile
 device:
+
 ![1AYG93PW5zL7YLyGkevGvPGQHmxYpGnv6m](https://raw.githubusercontent.com/jeffreyiacono/penalty-blox/master/images/1AYG93PW5zL7YLyGkevGvPGQHmxYpGnv6m.png)
 
 # PenaltyBlox Notes
