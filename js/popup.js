@@ -35,6 +35,7 @@ $(function() {
       'click #instructions-toggle'             : 'toggleInstructions',
       'keypress #new-blocked-entry'            : 'createOnEnter',
       'click #remove-promoted-tweets:checkbox' : 'toggleRemovePromoted',
+      'click #remove-moments-nav:checkbox'     : 'toggleRemoveMoments',
       'click #donate a.cta'                    : 'toggleDonation'
     },
 
@@ -43,9 +44,11 @@ $(function() {
       this.instructions   = $(this.el).find('#controls .instructions');
       this.reminder       = $(this.el).find('#reminder');
       this.removePromoted = $(this.el).find('#remove-promoted-tweets');
+      this.removeMoments  = $(this.el).find('#remove-moments-nav');
       this.donateQrCode   = $(this.el).find('#donate .qr-code');
       this.settings       = new Settings;
       this.setRemovePromotedControl(); // can this be handled with custom events?
+      this.setRemoveMomentsControl(); // can this be handled with custom events?
       this.showCurrentVersion();
       this.reminder.hide();
 
@@ -66,6 +69,10 @@ $(function() {
 
     setRemovePromotedControl: function() {
       this.removePromoted.prop('checked', this.settings.wantsPromotedRemoved());
+    },
+
+    setRemoveMomentsControl: function() {
+      this.removeMoments.prop('checked', this.settings.wantsMomentsRemoved());
     },
 
     toggleInstructions: function(e) {
@@ -101,6 +108,17 @@ $(function() {
         this.settings.set('removePromoted');
       } else {
         this.settings.remove('removePromoted');
+      }
+      // show refresh reminder => twitter doesn't have focus if popup showing
+      this.showRefreshReminder();
+    },
+
+    // TODO(iacono): consider DRY this + toggleRemovePromoted()
+    toggleRemoveMoments: function(e) {
+      if (this.removeMoments.is(':checked')) {
+        this.settings.set('removeMoments');
+      } else {
+        this.settings.remove('removeMoments');
       }
       // show refresh reminder => twitter doesn't have focus if popup showing
       this.showRefreshReminder();

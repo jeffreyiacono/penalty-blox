@@ -24,6 +24,7 @@ Referee.prototype.referee = function() {
     // Grab the home stream, pass as param => being reused over and over, so cache
     // it once and reuse it.
     var stream = $('.stream-items');
+    var topNav = $('div[role="navigation"]');
     // penalty box
     _.each(response.penalty_box, function(entry) {
       if (entry && entry.substr(0, 1) == "#") {
@@ -39,6 +40,7 @@ Referee.prototype.referee = function() {
     _.each(response.settings, function(setting) {
       switch (setting) {
         case "removePromoted": self.removePromotedTweets(stream); break;
+        case "removeMoments": self.removeMomentsNavigation(topNav); break;
       }
     });
   });
@@ -94,4 +96,11 @@ Referee.prototype.removeTweetsWithHashtag = function(hashtag, stream) {
  */
 Referee.prototype.removePromotedTweets = function(stream) {
   stream.find('a.js-action-profile-promoted').tweet().penaltyBox();
+}
+
+/**
+ * remove Moments navigation
+ */
+Referee.prototype.removeMomentsNavigation = function(nav) {
+  nav.find('.moments').penaltyBox();
 }

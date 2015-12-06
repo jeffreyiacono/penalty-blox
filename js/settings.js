@@ -16,6 +16,10 @@ Settings.prototype.wantsPromotedRemoved = function() {
   return this.includes('removePromoted');
 }
 
+Settings.prototype.wantsMomentsRemoved = function() {
+  return this.includes('removeMoments');
+}
+
 Settings.prototype.getAll = function() {
   return JSON.parse(this._store.getItem(this._key));
 }
