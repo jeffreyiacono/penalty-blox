@@ -62,8 +62,20 @@ $(function() {
 
     showCurrentVersion: function() {
       var self = this;
+
       $.getJSON('manifest.json', function(data) {
-        $(self.el).find('#current-version').text('penalty-box-v' + data['version']);
+        $('<a>', {
+          text: 'penalty-box-v' + data['version'],
+          title: 'version you\'re running',
+          href: 'https://github.com/jeffreyiacono/penalty-blox'
+        }).on('click', function(e) {
+          chrome.tabs.create({
+            url: $(e.target).attr('href')
+          });
+          return false;
+        }).appendTo(
+          '#current-version'
+        );
       });
     },
 

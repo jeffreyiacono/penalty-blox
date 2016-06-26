@@ -198,7 +198,11 @@ input {
   display: block;
   text-align: center;
   font-size: 10px;
-  color: #888;
   margin: 9px 0 0 0;
   padding: 0;
+}
+
+#current-version a {
+  color: #888;
+  text-decoration: none;
 }
