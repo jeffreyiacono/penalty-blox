@@ -1,4 +1,5 @@
 {
+  "v1.1.1": {"log": ["Add link to repo to better promote contributions"]},
   "v1.1.0": {"log": ["Option to remove Moments navigation"]},
   "v1.0.1": {"log": ["New bitcoin address"]},
   "v1.0.0": {"log": ["Updated to handle new new TW DOM struction", "Bumps manifest.json", "Bumps jQuery", "Bumps Underscore"]},
